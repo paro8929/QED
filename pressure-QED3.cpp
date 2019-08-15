@@ -9,6 +9,7 @@ const int N0=400;
 const int N1=202;
 const int write_to_file=0; //whether or not to (over-)write the results file
 const double IR=0.000001; //IR cutoff for spatial integration
+const double alpha_default=1.0; //default value of interaction if not writing to file
 //
 
 int ABORT=0;
@@ -376,7 +377,7 @@ int main(int argc, char* argv[])
   if (!write_to_file)
     {
       
-      ahat=200000;
+      ahat=alpha_default;
       double fa=partitionA();
       double fb=partitionB();
       double v=vacuum();
